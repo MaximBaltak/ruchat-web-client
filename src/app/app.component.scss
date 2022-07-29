@@ -1,0 +1,42 @@
+$placeholder: rgba(142, 142, 142, 0.56);
+$color-blue: #0B87FA;
+$color-red: #BF0101;
+$color-green: #1BBF00;
+$color-white: #ffffff;
+$color-orange: #FF800C;
+
+@mixin dekstop(){
+  @media screen and (max-width: 1920px){
+    @content
+  }
+}
+@mixin dekstop-small(){
+  @media screen and (max-width: 1200px){
+    @content
+  }
+}
+@mixin tablet-medium(){
+  @media screen and (max-width: 1024px ){
+    @content
+  }
+}
+@mixin tablet-small(){
+  @media screen and (max-width: 768px){
+    @content
+  }
+}
+@mixin phone-big(){
+  @media screen and (max-width: 600px){
+    @content
+  }
+}
+@mixin phone-medium(){
+  @media screen and (max-width: 480px){
+    @content
+  }
+}
+@mixin phone-small(){
+  @media screen and (max-width: 320px){
+    @content
+  }
+}

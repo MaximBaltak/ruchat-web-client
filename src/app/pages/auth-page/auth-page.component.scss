@@ -1,0 +1,148 @@
+@import "./../../app.component";
+
+.container {
+  height: 100%;
+  width: 1000px;
+  margin: 0 auto 0;
+  @include tablet-medium() {
+    width: 600px;
+  }
+  @include tablet-small() {
+    width: 100%;
+  }
+
+}
+
+.logo {
+  width: 299px;
+  height: 57px;
+  display: block;
+  margin: 69px auto 0;
+  @include phone-medium() {
+    width: 200px;
+    height: 40px;
+  }
+}
+
+.form-authorization {
+  width: 230px;
+  margin: 140px auto 0;
+  @include phone-medium() {
+    width: 100%
+  }
+
+  .input-file-none {
+    display: none;
+  }
+
+  .input-file-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 0;
+    background: $color-blue;
+    box-shadow: inset 0 0 21px rgba(0, 0, 0, 0.25);
+    border-radius: 100%;
+    @include phone-medium() {
+      width: 100px;
+      height: 100px;
+    }
+
+    svg {
+      position: relative;
+      top: 19px;
+      left: 16px;
+      height: 63px;
+      width: 63px;
+      @include phone-medium() {
+        top: 26px;
+        left: 22px;
+        height: 86px;
+        width: 88px;
+      }
+    }
+
+    img {
+      height: inherit;
+      width: inherit;
+      border-radius: 100%;
+    }
+  }
+
+  .input-text {
+    width: 90%;
+    height: 23px;
+    background: $color-white;
+    border: 1px solid $color-blue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 33px;
+    display: block;
+    margin: 20px auto 0;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 15px 9px;
+    color: black;
+    @include phone-medium() {
+      width: 70%;
+      font-size: 18px;
+
+    }
+
+    &::placeholder {
+      color: $placeholder;
+    }
+
+  }
+
+  .show {
+    position: absolute;
+    transform: translate(188px, -34px);
+    width: 83px;
+    height: 83px;
+    @include phone-medium() {
+      transform: none;
+      left: 75%;
+      top: 539px;
+      width: 69px;
+      height: 71px;
+    }
+  }
+
+  .reg {
+    top: 394px;
+    @include phone-medium() {
+      top: 345px;
+    }
+
+  }
+
+  .button {
+    width: 90%;
+    height: 89px;
+    margin: 20px auto 0;
+
+    svg {
+      height: inherit;
+      width: inherit;
+    }
+  }
+
+  .text {
+    width: 100%;
+    margin: 20px 0 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    @include phone-medium {
+      font-size: 20px;
+    }
+
+    a {
+      color: $color-blue;
+    }
+
+  }
+}
