@@ -1,0 +1,40 @@
+<div class="flex">
+  <div class="info">
+    <div class="avatar_container">
+      <app-avatar [type]="'big'"></app-avatar>
+    </div>
+    <p>Максим7393</p>
+    <svg>
+      <use xlink:href="./assets/icons/icons-interface.svg#editor"></use>
+    </svg>
+  </div>
+  <div class="buttons">
+    <button class="exit">выйти</button>
+    <div class="container-button">
+      <button class="exit next">о приложении</button>
+      <div class="message_indicator">
+        <p>99</p>
+      </div>
+    </div>
+  </div>
+  <div class="search_container">
+    <input type="text" placeholder="поиск">
+    <svg>
+      <use xlink:href="./assets/icons/icons-interface.svg#search"></use>
+    </svg>
+  </div>
+  <ul class="sections">
+    <li><p>сообщения</p></li>
+    <li><p>все пользователи</p></li>
+  </ul>
+  <ul class="users">
+    <app-user></app-user>
+    <app-user></app-user>
+    <app-user></app-user>
+    <app-user></app-user>
+    <app-user></app-user>
+    <app-user></app-user>
+    <app-user></app-user>
+    <app-user></app-user>
+  </ul>
+</div>

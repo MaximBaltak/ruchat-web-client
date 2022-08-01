@@ -1,0 +1,5 @@
+ <div class="avatar">
+    <img src="./assets/image/avatar.jpg" alt="avatar" title="Name">
+    <div *ngIf="type!=='small'"
+         [ngClass]="{'indicator':type === 'big','indicator-medium':type === 'medium'}"></div>
+  </div>

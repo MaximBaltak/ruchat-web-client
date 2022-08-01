@@ -1,0 +1,33 @@
+@import "./../../app.component";
+.avatar{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+  .indicator{
+    display: block;
+    position: absolute;
+    border-radius: 100px;
+    width: 18px;
+    height: 18px;
+    background: $color-green;
+    border: 3px solid $color-white;
+    transform: translate(73px,-19px);
+  }
+  .indicator-medium{
+    display: block;
+    position: absolute;
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
+    background: $color-green;
+    border: 2px solid $color-white;
+    transform: translate(35px,-11px);
+  }
+}
+

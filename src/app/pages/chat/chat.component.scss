@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  height: 99vh;
+  grid-template-columns: 586px 1fr;
+  grid-template-areas: "menu chat";
+
+  .menu {
+    grid-area: menu;
+  }
+
+  .chat {
+    grid-area: chat;
+  }
+}
