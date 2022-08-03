@@ -10,7 +10,7 @@ $color-orange: #FF800C;
     @content
   }
 }
-@mixin dekstop-small(){
+@mixin  dekstop-small(){
   @media screen and (max-width: 1200px){
     @content
   }

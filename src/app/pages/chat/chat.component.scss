@@ -1,8 +1,15 @@
+@import "./../../app.component";
 .grid {
   display: grid;
   height: 99vh;
   grid-template-columns: 586px 1fr;
   grid-template-areas: "menu chat";
+  @include dekstop-small(){
+    grid-template-columns: 495px 1fr;
+  }
+  @include tablet-medium(){
+    display: block;
+  }
 
   .menu {
     grid-area: menu;

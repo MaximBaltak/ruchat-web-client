@@ -14,7 +14,15 @@
   width: 520px;
   align-items: center;
   justify-content: space-between;
-
+  @include dekstop-small(){
+    width: 95%;
+  }
+  @include tablet-medium(){
+    width: 520px;
+  }
+  @include tablet-small(){
+    width: 100%;
+  }
   .avatar_container {
     width: 111px;
     height: 111px;
@@ -23,18 +31,48 @@
 
   p {
     width: 250px;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 30px;
     line-height: 35px;
-    display: flex;
     align-items: center;
     color: #000000;
+
   }
 
   svg {
     width: 40px;
     height: 40px;
   }
+}
+.info-mobile {
+  display: block;
+  width: 100%;
+  .avatar_container {
+    width: 111px;
+    height: 111px;
+    position: relative;
+    margin: 10px auto 0;
+  }
+  .flex-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto 0;
+    p {
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 35px;
+      align-items: center;
+      color: #000000;
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 }
 
 .buttons {
@@ -43,6 +81,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include dekstop-small(){
+    width: 350px;
+  }
+  @include phone-medium(){
+    flex-flow: column;
+    height: 131px;
+    width: 100%;
+  }
 
   .exit {
     display: block;
@@ -86,9 +132,9 @@
 }
 
 .search_container {
+  box-sizing: border-box;
   margin-top: 57px;
   position: relative;
-
   input {
     width: 502px;
     height: 40px;
@@ -97,6 +143,9 @@
     font-weight: 400;
     font-size: 20px;
     color: black;
+    @include dekstop-small(){
+      width: 85%;
+    }
 
     &::placeholder {
       color: rgba(142, 142, 142, 0.56);
@@ -108,7 +157,13 @@
     width: 39px;
     height: 39px;
     transform: translate(505px, -27px);
-  }
+    @include dekstop-small(){
+      transform: translate(266px, -27px);
+    }
+    @include phone-medium(){
+      transform: translate(241px, -27px);
+    }
+ }
 }
 
 .sections {
@@ -117,6 +172,11 @@
   width: 303px;
   align-items: center;
   justify-content: space-between;
+  @include phone-medium(){
+    width: 100%;
+    flex-flow: column;
+    height: 100px;
+  }
 
   li {
     height: 28px;
@@ -134,4 +194,7 @@
 .users {
   overflow-y: auto;
   height: 500px;
+  @include phone-medium(){
+    width: 100%;
+  }
 }

@@ -1,11 +1,17 @@
 @import "./../../app.component";
 
 .user {
-  width: 500px;
+  width: 402px;
   margin-top: 43px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include tablet-medium(){
+    width: 100%;
+  }
+  @include phone-medium(){
+    flex-wrap: wrap;
+  }
 
   .avatar_container {
     width: 55px;

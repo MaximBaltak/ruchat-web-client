@@ -1,4 +1,5 @@
 <div class="chat-container">
+  <app-header [isMobile]="isMobile" *ngIf="isMobile"></app-header>
   <ul class="messages">
     <app-message [isCome]="true"></app-message>
     <app-message [isCome]="false"></app-message>
@@ -17,5 +18,5 @@
       <use xlink:href="./assets/icons/icons-interface.svg#message"></use>
     </svg>
   </div>
-  <app-header></app-header>
+  <app-header *ngIf="!isMobile"></app-header>
 </div>

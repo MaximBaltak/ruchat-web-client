@@ -1,11 +1,30 @@
+@import './../../app.component';
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 83px;
   background: #000000;
-
+  @include tablet-medium() {
+    display: grid;
+    grid-template-columns: 188px 1fr;
+    grid-template-areas: "button logo";
+    align-self: center;
+  }
+  @include phone-medium() {
+    display: flex;
+    flex-flow: column;
+    height: 135px;
+  }
+  svg{
+    margin: 0 auto 0;
+    grid-area: button;
+    width: 87px;
+    height: 54px;
+  }
   img {
+    margin: 0 auto 0;
+    grid-area: logo;
     display: block;
     width: 191px;
     height: 39px;

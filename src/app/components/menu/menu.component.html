@@ -1,5 +1,5 @@
 <div class="flex">
-  <div class="info">
+  <div class="info" *ngIf="isBigWidth;else mobile">
     <div class="avatar_container">
       <app-avatar [type]="'big'"></app-avatar>
     </div>
@@ -8,6 +8,19 @@
       <use xlink:href="./assets/icons/icons-interface.svg#editor"></use>
     </svg>
   </div>
+  <ng-template #mobile>
+    <div class="info-mobile">
+      <div class="avatar_container">
+        <app-avatar [type]="'big'"></app-avatar>
+      </div>
+      <div class="flex-mobile">
+        <p>Максим7393</p>
+        <svg>
+          <use xlink:href="./assets/icons/icons-interface.svg#editor"></use>
+        </svg>
+      </div>
+    </div>
+  </ng-template>
   <div class="buttons">
     <button class="exit">выйти</button>
     <div class="container-button">
