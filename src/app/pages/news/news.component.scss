@@ -1,0 +1,26 @@
+@import "./../../app.component";
+.grid-news {
+  display: grid;
+  height: 99vh;
+  grid-template-rows: 83px auto;
+  grid-template-columns: 586px 1fr;
+  grid-template-areas:"header-container header-container"
+                      "menu chat";
+  @include tablet-medium(){
+    grid-template-columns: none;
+    grid-template-rows: auto min(600px) 1fr;
+    grid-template-areas: "header-container"
+                          "menu"
+                          "chat"
+  }
+  .header-container{
+    grid-area: header-container;
+  }
+  .menu {
+    grid-area: menu;
+  }
+
+  .chat {
+    grid-area: chat;
+  }
+}

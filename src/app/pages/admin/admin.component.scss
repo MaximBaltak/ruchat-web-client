@@ -1,0 +1,130 @@
+@import "./../../app.component";
+.header{
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: #1c1c1c;
+  .logo{
+    display: block;
+    width: 291px;
+    height: 40px;
+  }
+}
+.container-flex{
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  margin: 100px auto 0;
+  @include tablet-medium(){
+    width: 80%;
+  }
+}
+.buttons {
+  width: 373px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include dekstop-small(){
+    width: 350px;
+  }
+  @include phone-medium(){
+    flex-flow: column;
+    height: 131px;
+    width: 100%;
+  }
+
+  .exit {
+    display: block;
+    width: 150px;
+    height: 40px;
+    background: $color-white;
+    border: 1px solid $color-red;
+    border-radius: 13px;
+    font-weight: 400;
+    font-size: 20px;
+    color: $color-red;
+    transition: all .2s;
+    cursor: pointer;
+    &:hover{
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+
+  .container-button {
+    position: relative;
+
+    .next {
+      border-color: $color-blue;
+      color: $color-blue;
+      transition: all .2s;
+      cursor: pointer;
+      &:hover{
+        background: $color-blue;
+        color: $color-white;
+      }
+    }
+
+    .message_indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      background: #FF800C;
+      transform: translate(127px, -66px);
+      border-radius: 100%;
+
+      p {
+        font-weight: 900;
+        font-size: 16px;
+        color: $color-white;
+      }
+    }
+  }
+}
+.overlay{
+  position: fixed ;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.90);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .flex{
+    width: 90%;
+    background: white;
+    border-radius: 13px;
+    padding: 10px;
+    p{
+      text-align: center;
+      font-weight: 500;
+      font-size: 20px;
+    }
+    button{
+      margin: 20px auto 0;
+      display: block;
+      width: 150px;
+      height: 40px;
+      background: $color-white;
+      border: 1px solid $color-red;
+      border-radius: 13px;
+      font-weight: 400;
+      font-size: 20px;
+      color: $color-red;
+      transition: all .2s;
+      cursor: pointer;
+      &:hover{
+        background: $color-red;
+        color: $color-white;
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
-<li class="user">
+<li class="user" *ngIf="!isAdmin;else user">
   <div class="avatar_container">
     <app-avatar [type]="'medium'"></app-avatar>
   </div>
-  <p class="text">Максим7393</p>
+  <p class="text">Максим7393 <span>администратор</span></p>
   <div class="indicator">
     <p>99</p>
   </div>
@@ -19,3 +19,21 @@
     </button>
   </div>
 </li>
+<ng-template #user>
+  <li class="user">
+    <div class="avatar_container">
+      <app-avatar [type]="'medium'"></app-avatar>
+    </div>
+    <p class="text">Максим7393</p>
+    <button class="blocking" *ngIf="isBlocked">
+      <svg>
+        <use xlink:href="./assets/icons/icons-interface.svg#blocking"></use>
+      </svg>
+    </button>
+    <button class="blocking" *ngIf="!isBlocked">
+      <svg>
+        <use xlink:href="./assets/icons/icons-interface.svg#unblocking"></use>
+      </svg>
+    </button>
+  </li>
+</ng-template>

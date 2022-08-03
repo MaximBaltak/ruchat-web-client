@@ -108,6 +108,9 @@
       width: 69px;
       height: 71px;
     }
+    use{
+      cursor: pointer;
+    }
   }
 
   .reg {
@@ -122,11 +125,15 @@
     width: 90%;
     height: 89px;
     margin: 20px auto 0;
-
+    cursor: pointer;
+    transition: all .2s;
     svg {
       height: inherit;
       width: inherit;
     }
+    &:hover{
+      transform: translateX(10px);
+    };
   }
 
   .text {

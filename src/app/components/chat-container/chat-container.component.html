@@ -1,5 +1,5 @@
-<div class="chat-container">
-  <app-header [isMobile]="isMobile" *ngIf="isMobile"></app-header>
+<div class="chat-container" *ngIf="type === 'menu';else news ">
+  <app-header  [isMobile]="isMobile" *ngIf="isMobile"></app-header>
   <ul class="messages">
     <app-message [isCome]="true"></app-message>
     <app-message [isCome]="false"></app-message>
@@ -20,3 +20,11 @@
   </div>
   <app-header *ngIf="!isMobile"></app-header>
 </div>
+<ng-template #news>
+  <div class="chat-container">
+    <ul class="messages news news-height">
+      <app-message-admin></app-message-admin>
+      <app-message-admin></app-message-admin>
+    </ul>
+  </div>
+</ng-template>

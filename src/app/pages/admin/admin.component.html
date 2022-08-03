@@ -1,0 +1,25 @@
+<div class="header" *ngIf="!isMobile">
+  <img class="logo" src="./assets/image/logo-admin.png" alt="logo">
+  <app-navigation-admin></app-navigation-admin>
+</div>
+<div class="container-flex">
+  <div class="buttons">
+    <button class="exit">выйти</button>
+    <div class="container-button">
+      <button class="exit next">в чат</button>
+      <div class="message_indicator">
+        <p>99</p>
+      </div>
+    </div>
+  </div>
+  <!--  <app-control-content></app-control-content>-->
+  <!--  <app-control-users></app-control-users>-->
+  <app-control-news></app-control-news>
+  <div class="overlay" *ngIf="isMobile">
+    <div class="flex">
+      <p>Для использования административной панели,воспользуйтесь компьютером или планшетом</p>
+      <button>Назад</button>
+    </div>
+  </div>
+</div>
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   isBigWidth: boolean = true
+  isTablet:boolean = true
+  @Input() type:string = 'menu'
   constructor() { }
 
   ngOnInit(): void {
     setInterval(()=>{
       this.isBigWidth = window.innerWidth > 480
+      this.isTablet = window.innerWidth >  1024
     },300)
   }
 

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="search_container">
+    <input type="text" placeholder="поиск">
+    <svg>
+      <use xlink:href="./assets/icons/icons-interface.svg#search"></use>
+    </svg>
+  </div>
+  <ul class="users">
+    <app-user [isAdmin]="true" [isBlocked]="false"></app-user>
+    <app-user [isAdmin]="true" [isBlocked]="false"></app-user>
+    <app-user [isAdmin]="true" [isBlocked]="false"></app-user>
+    <app-user [isAdmin]="true" [isBlocked]="true"></app-user>
+    <app-user [isAdmin]="true" [isBlocked]="true"></app-user>
+    <app-user [isAdmin]="true" [isBlocked]="false"></app-user>
+    <app-user [isAdmin]="true" [isBlocked]="false"></app-user>
+  </ul>
+</div>
