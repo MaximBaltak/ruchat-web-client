@@ -12,13 +12,15 @@
     <app-message [isCome]="true"></app-message>
     <app-message [isCome]="false"></app-message>
   </ul>
-  <div class="control">
-    <input type="text" placeholder="сообщение">
-    <svg class="icon">
-      <use xlink:href="./assets/icons/icons-interface.svg#message"></use>
-    </svg>
+  <div>
+    <div class="control">
+      <input type="text" placeholder="сообщение">
+      <svg class="icon">
+        <use xlink:href="./assets/icons/icons-interface.svg#message"></use>
+      </svg>
+    </div>
+    <app-header *ngIf="!isMobile"></app-header>
   </div>
-  <app-header *ngIf="!isMobile"></app-header>
 </div>
 <ng-template #news>
   <div class="chat-container">
