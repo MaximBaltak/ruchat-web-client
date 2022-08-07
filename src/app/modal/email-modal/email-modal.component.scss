@@ -1,0 +1,64 @@
+@import "./../../app.component";
+.overlay{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal{
+    padding: 15px 33px;
+    width: 267px;
+    min-height: 203px;
+    background: $color-white;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    @include phone-medium(){
+      width: 70%;
+    }
+    .text{
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      color: #000000;
+    }
+    .form{
+      .input-text {
+        background: $color-white;
+        border: 1px solid $color-blue;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        border-radius: 33px;
+        display: block;
+        margin: 24px auto 0;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 15px 9px;
+        color: black;
+        @include phone-medium() {
+          width: 70%;
+          font-size: 18px;
+
+        }
+
+        &::placeholder {
+          color: $placeholder;
+        }
+
+      }
+      .submit{
+        margin: 24px auto 0;
+        cursor: pointer;
+        width: 81px;
+        height: 19px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-green;
+      }
+
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './pages/auth/auth.component';
@@ -19,6 +18,15 @@ import { NavigationAdminComponent } from './components/navigation-admin/navigati
 import { ControlContentComponent } from './components/control-content/control-content.component';
 import { ControlUsersComponent } from './components/control-users/control-users.component';
 import { ControlNewsComponent } from './components/control-news/control-news.component';
+import { InfoModalComponent } from './modal/info-modal/info-modal.component';
+import { SettingsModalComponent } from './modal/settings-modal/settings-modal.component';
+import { EmailModalComponent } from './modal/email-modal/email-modal.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { ConfirmComponent } from './pages/confirm/confirm.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { BackgroundChangeComponent } from './components/background-change/background-change.component';
+import { NewPaswordComponent } from './components/new-pasword/new-pasword.component';
+import { ConfirmedComponent } from './components/confirmed/confirmed.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +46,15 @@ import { ControlNewsComponent } from './components/control-news/control-news.com
     ControlContentComponent,
     ControlUsersComponent,
     ControlNewsComponent,
+    InfoModalComponent,
+    SettingsModalComponent,
+    EmailModalComponent,
+    SettingsComponent,
+    ConfirmComponent,
+    ProfileComponent,
+    BackgroundChangeComponent,
+    NewPaswordComponent,
+    ConfirmedComponent,
   ],
   imports: [
     BrowserModule,

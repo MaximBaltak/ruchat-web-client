@@ -1,0 +1,53 @@
+@import "./../../app.component";
+.container{
+  z-index: 1000;
+  position: absolute;
+  width: 217px;
+  min-height: 94px;
+  left: 547px;
+  top: 66px;
+  background: #FFFFFF;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.25);
+  border-radius: 13px;
+  padding: 8px;
+  @include dekstop-small(){
+    left: 479px;
+  }
+  @include tablet-medium(){
+    left: 50%;
+  }
+  @include tablet-small(){
+    left: 63%;
+  }
+  @media screen and (max-width: 659px){
+    left: 58%;
+  }
+  @media screen and (max-width: 571px){
+    left: 50%;
+  }
+  @media screen and (max-width: 489px){
+    left: 42%;
+  }
+  @include phone-medium(){
+  top: 18%;
+  left: 33%;
+  }
+  @media screen and (max-width: 372px){
+    left: 15%;
+  }
+  .menu{
+    padding: 0;
+    .el{
+      margin-top: 15px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: #000000;
+      transition: all .1s;
+      cursor: pointer;
+      &:hover{
+        background: rgba(11, 135, 250, 0.31);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import "./../../app.component";
+.container{
+  margin-top: 100px;
+  .text{
+    margin: 0 auto 0;
+    width: 436px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+    @include phone-medium(){
+      width: 100%;
+    }
+  }
+  .timer{
+    margin: 20px auto 0;
+    width: 100px;
+    font-weight: 900;
+    font-size: 32px;
+    text-align: center;
+    color: #000000;
+
+  }
+  .code{
+    margin: 20px auto 0;
+    display: block;
+    width: 105px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 13px;
+    font-size: 18px;
+    padding: 5px;
+    font-weight: 500;
+    color: black;
+    &::placeholder{
+      color: $placeholder;
+    }
+  }
+  .save{
+    margin: 33px auto 0;
+    width: 150px;
+    height: 19px;
+    font-weight: 600;
+    font-size: 18px;
+    color: $color-green;
+  }
+  .back{
+    color: $color-red;
+  }
+}

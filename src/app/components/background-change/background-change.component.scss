@@ -1,0 +1,67 @@
+@import "./../../app.component";
+.container{
+  margin-top: 100px;
+  .text{
+    font-weight: 500;
+    font-size: 32px;
+    text-align: center;
+    color: $color-white;
+  }
+  .flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 390px;
+    margin: 30px auto 0;
+    @include phone-medium(){
+      width: 80%;
+    }
+    .el{
+      cursor: pointer;
+      width: 80px;
+      height: 80px;
+      border-radius: 13px;
+      margin: 20px;
+      box-shadow: 0 0 10px #5e5d5d;
+      transition: all .3s;
+      &:hover{
+        transform: translateY(-10px);
+      }
+      img{
+        border-radius: 13px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .back{
+    margin: 40px auto 0;
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: 1px solid $color-red;
+    border-radius: 13px;
+    font-weight: 400;
+    font-size: 20px;
+    color: $color-red;
+    transition: all .2s;
+    cursor: pointer;
+    &:hover{
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}
+.background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1000;
+}
+.active{
+  border: solid 1px $color-white;
+  transform: translateY(-10px);
+}
