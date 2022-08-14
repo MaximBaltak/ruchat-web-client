@@ -21,17 +21,7 @@
       </div>
     </div>
   </ng-template>
-  <div class="buttons">
-    <button class="exit">выйти</button>
-    <div class="container-button">
-      <button  class="exit next">о приложении</button>
-      <button  class="exit next">в чат</button>
-      <div class="message_indicator">
-        <p>99</p>
-      </div>
-    </div>
-    <button class="exit admin ">админка</button>
-  </div>
+  <app-buttons-control [isChat]="true"></app-buttons-control>
   <div class="search_container">
     <input type="text" placeholder="поиск">
     <svg>
@@ -55,15 +45,7 @@
 </div>
 <ng-template #about>
   <div class="flex-news">
-    <div class="buttons">
-      <button class="exit">выйти</button>
-      <div class="container-button">
-        <button class="exit next">о приложении</button>
-        <div class="message_indicator">
-          <p>99</p>
-        </div>
-      </div>
-    </div>
+    <app-buttons-control [isChat]="false"></app-buttons-control>
     <img *ngIf="isTablet" class="logo-news" src="./assets/image/logo.png" alt="logo">
     <div class="about">
       <p>Приложение “RuChat” преднозначено для общения </p>
@@ -71,4 +53,4 @@
     </div>
   </div>
 </ng-template>
-<app-settings-modal></app-settings-modal>
+<app-settings-modal *ngIf="isOpenSettingsModal"></app-settings-modal>

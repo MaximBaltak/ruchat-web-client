@@ -7,15 +7,18 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   isBigWidth: boolean = true
-  isTablet:boolean = true
-  @Input() type:string = 'menu'
-  constructor() { }
+  isTablet: boolean = true
+  @Input() type: string = 'menu'
+  isOpenSettingsModal: boolean = false
+
+  constructor() {
+  }
 
   ngOnInit(): void {
-    setInterval(()=>{
+    setInterval(() => {
       this.isBigWidth = window.innerWidth > 480
-      this.isTablet = window.innerWidth >  1024
-    },300)
+      this.isTablet = window.innerWidth > 1024
+    }, 300)
   }
 
 }

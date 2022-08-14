@@ -1,0 +1,59 @@
+@import "../../../../app.component";
+.container{
+  margin-top: 100px;
+  .search_container {
+    box-sizing: border-box;
+    margin-top: 57px;
+    position: relative;
+    input {
+      width: 502px;
+      height: 40px;
+      border-bottom: solid 1px black;
+      padding: 0 24px;
+      font-weight: 400;
+      font-size: 20px;
+      color: black;
+      @include dekstop-small(){
+        width: 85%;
+      }
+
+      &::placeholder {
+        color: rgba(142, 142, 142, 0.56);
+      }
+    }
+
+    svg {
+      position: absolute;
+      width: 39px;
+      height: 39px;
+      cursor: pointer;
+      transition: all .2s;
+      transform: translate(496px, -27px);
+      @include dekstop-small(){
+        transform: translate(341px, -27px);
+      }
+      @include tablet-medium(){
+        transform: translate(260px, -27px);
+      }
+      @include phone-medium(){
+        transform: translate(268px, -27px);
+      }
+    }
+  }
+  .users {
+    margin-top: 50px;
+    overflow-y: auto;
+    height: 500px;
+    &::-webkit-scrollbar{
+      width: 2px;
+    }
+    &::-webkit-scrollbar-thumb{
+      width: 1px;
+      background: black;
+      border-radius: 20px;
+    }
+    @include phone-medium(){
+      width: 100%;
+    }
+  }
+}

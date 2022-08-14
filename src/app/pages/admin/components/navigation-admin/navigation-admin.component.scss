@@ -1,0 +1,31 @@
+@import "../../../../app.component";
+.nav{
+  display: flex;
+  margin-top: 20px;
+  justify-items: center;
+  justify-content: space-around;
+  width: 600px;
+  @include tablet-small(){
+    width: 90%;
+  }
+  .link{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border-left: solid 1px #ffffff;
+    text-align: center;
+    cursor: pointer;
+    transition: all .1s;
+    a{
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    &:nth-child(1){
+      border: none;
+    }
+    &:hover{
+      background: rgba(255, 255, 255, 0.24);
+    }
+  }
+
+}

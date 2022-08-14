@@ -3,18 +3,8 @@
   <app-navigation-admin></app-navigation-admin>
 </div>
 <div class="container-flex">
-  <div class="buttons">
-    <button class="exit">выйти</button>
-    <div class="container-button">
-      <button class="exit next">в чат</button>
-      <div class="message_indicator">
-        <p>99</p>
-      </div>
-    </div>
-  </div>
-  <!--  <app-control-content></app-control-content>-->
-  <!--  <app-control-users></app-control-users>-->
-  <app-control-news></app-control-news>
+  <app-buttons-control [isChat]="false"></app-buttons-control>
+  <router-outlet></router-outlet>
   <app-info-modal></app-info-modal>
 </div>
 

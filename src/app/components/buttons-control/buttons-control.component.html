@@ -1,0 +1,11 @@
+<div class="buttons">
+  <button (click)="exit()" class="exit">выйти</button>
+  <div class="container-button">
+    <button (click)="toNews()" *ngIf="isChat" class="exit next">о приложении</button>
+    <button (click)="toChat()" *ngIf="!isChat" class="exit next">в чат</button>
+    <div class="message_indicator">
+      <p>99</p>
+    </div>
+  </div>
+  <button (click)="toAdmin()" *ngIf="isChat" class="exit admin ">админка</button>
+</div>

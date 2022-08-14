@@ -45,6 +45,10 @@
       color: #000000;
       transition: all .1s;
       cursor: pointer;
+      a{
+        color: black;
+        text-decoration: none;
+      }
       &:hover{
         background: rgba(11, 135, 250, 0.31);
       }

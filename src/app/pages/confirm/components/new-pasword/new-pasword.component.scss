@@ -1,0 +1,64 @@
+@import "../../../../app.component";
+.container{
+  margin-top: 200px;
+  .text {
+    margin: 0 auto 0;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+  }
+  .input-text {
+    width: 90%;
+    height: 23px;
+    background: $color-white;
+    border: 1px solid $color-blue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 33px;
+    display: block;
+    margin: 20px auto 0;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 15px 9px;
+    color: black;
+    @include phone-medium() {
+      width: 70%;
+      font-size: 18px;
+
+    }
+
+    &::placeholder {
+      color: $placeholder;
+    }
+
+  }
+
+  .show {
+    position: absolute;
+    transform: translate(212px, -34px);
+    width: 83px;
+    height: 83px;
+    @include phone-medium() {
+      transform: none;
+      left: 64%;
+      top: 287px;
+      width: 69px;
+      height: 71px;
+    }
+    use{
+      cursor: pointer;
+    }
+  }
+  .save{
+    margin: 33px auto 0;
+    width: 150px;
+    height: 19px;
+    font-weight: 600;
+    font-size: 18px;
+    color: $color-green;
+  }
+  .back{
+    color: $color-red;
+  }
+}
