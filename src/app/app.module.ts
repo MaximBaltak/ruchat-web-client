@@ -29,6 +29,11 @@ import { NewPaswordComponent } from './pages/confirm/components/new-pasword/new-
 import { ConfirmedComponent } from './pages/confirm/components/confirmed/confirmed.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ButtonsControlComponent } from './components/buttons-control/buttons-control.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import {EffectsModule} from "@ngrx/effects";
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,9 +68,11 @@ import { ButtonsControlComponent } from './components/buttons-control/buttons-co
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

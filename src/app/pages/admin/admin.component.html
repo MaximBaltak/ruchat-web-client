@@ -1,4 +1,4 @@
-<div class="header" *ngIf="!isMobile">
+<div class="header" *ngIf="!(isMobile$ | async)">
   <img class="logo" src="./assets/image/logo-admin.png" alt="logo">
   <app-navigation-admin></app-navigation-admin>
 </div>

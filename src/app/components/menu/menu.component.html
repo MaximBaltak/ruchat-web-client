@@ -1,5 +1,5 @@
 <div class="flex" *ngIf="type === 'menu';else about">
-  <div class="info" *ngIf="isBigWidth;else mobile">
+  <div class="info" *ngIf="isDekstop$ | async;else mobile">
     <div class="avatar_container">
       <app-avatar [type]="'big'"></app-avatar>
     </div>
@@ -46,7 +46,7 @@
 <ng-template #about>
   <div class="flex-news">
     <app-buttons-control [isChat]="false"></app-buttons-control>
-    <img *ngIf="isTablet" class="logo-news" src="./assets/image/logo.png" alt="logo">
+    <img *ngIf="isDekstop$" class="logo-news" src="./assets/image/logo.png" alt="logo">
     <div class="about">
       <p>Приложение “RuChat” преднозначено для общения </p>
      <p>Версия : 0.0.1</p>

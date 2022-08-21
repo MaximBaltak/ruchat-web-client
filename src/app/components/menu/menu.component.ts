@@ -1,24 +1,20 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {AppState} from "../../store";
+import {Store} from "@ngrx/store";
+import {Observable} from "rxjs";
+import {isDekstopSelector} from "../../store/selectors/adaptive.selectors";
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
-  isBigWidth: boolean = true
-  isTablet: boolean = true
+export class MenuComponent {
   @Input() type: string = 'menu'
+  isDekstop$: Observable<boolean>
   isOpenSettingsModal: boolean = false
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-    setInterval(() => {
-      this.isBigWidth = window.innerWidth > 480
-      this.isTablet = window.innerWidth > 1024
-    }, 300)
+  constructor(private store$: Store<AppState>) {
+    this.isDekstop$ = this.store$.select(isDekstopSelector)
   }
 
 }
