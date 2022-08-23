@@ -3,12 +3,15 @@ import {
 
 } from '@ngrx/store';
 import {adaptiveReducer, IAdaptiveState} from "./reducers/adaptive.reducer";
+import {IModalsState, modalsReducer} from "./reducers/modals.reducer";
 
 export interface AppState {
-  adaptive: IAdaptiveState
+  adaptive: IAdaptiveState,
+  modals: IModalsState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  adaptive: adaptiveReducer
+  adaptive: adaptiveReducer,
+  modals: modalsReducer
 };
 

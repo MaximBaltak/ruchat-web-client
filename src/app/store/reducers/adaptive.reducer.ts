@@ -1,6 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
 import {changeWindowAction} from "../actions/adaptive.actions";
-
 export const adaptiveFeatureKey = 'adaptive';
 
 export interface IAdaptiveState {

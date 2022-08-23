@@ -34,6 +34,8 @@ import { reducers } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {EffectsModule} from "@ngrx/effects";
+import { ModalComponent } from './modal/modal.component';
+import {Modals} from "./guards/modals.guard";
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +66,7 @@ import {EffectsModule} from "@ngrx/effects";
     ConfirmedComponent,
     NotFoundComponent,
     ButtonsControlComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,8 +74,9 @@ import {EffectsModule} from "@ngrx/effects";
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    EffectsModule.forFeature(),
   ],
-  providers: [],
+  providers: [Modals],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

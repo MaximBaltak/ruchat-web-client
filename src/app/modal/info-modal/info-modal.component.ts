@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-info-modal',
   templateUrl: './info-modal.component.html',
   styleUrls: ['./info-modal.component.scss']
 })
-export class InfoModalComponent implements OnInit {
+export class InfoModalComponent {
 
-  isMobile:boolean = false;
-  constructor() { }
-
-  ngOnInit(): void {
-    setInterval(()=>{
-      this.isMobile = window.innerWidth <= 600
-    },300)
-  }
-
+  constructor(private route:Router) {}
+    public toBack(): void {
+      this.route.navigate(['user',1])
+    }
 }

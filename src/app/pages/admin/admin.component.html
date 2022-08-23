@@ -5,6 +5,6 @@
 <div class="container-flex">
   <app-buttons-control [isChat]="false"></app-buttons-control>
   <router-outlet></router-outlet>
-  <app-info-modal></app-info-modal>
+  <app-info-modal *ngIf="isMobile$| async"></app-info-modal>
 </div>
 

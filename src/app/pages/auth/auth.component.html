@@ -26,25 +26,24 @@
     </button>
     <p class="text">если есть акаунт,то можно <span class="link" (click)="toggleForm()">войти</span></p>
   </form>
-    <form *ngIf="!isAuth" class="form-authorization">
-      <input class="input-text" type="email" placeholder="E-mail">
-      <div>
-        <input class="input-text" type="password" placeholder="пароль">
-        <svg class="show reg">
-          <use xlink:href="./assets/icons/icons-interface.svg#show-password-active"></use>
-        </svg>
-        <!--      <svg class="show">-->
-        <!--        <use xlink:href="./assets/icons/icons-interface.svg#show-password-no-active"></use>-->
-        <!--      </svg>-->
-      </div>
-      <button (click)="signIn()" class="button">
-        <svg>
-          <use xlink:href="./assets/icons/icons-interface.svg#sign_up"></use>
-        </svg>
-      </button>
-      <p class="text">если у вас нет акаунта, то можно
-         <span class="link" (click)="toggleForm()">зарегистрироваться</span></p>
-      <p (click)="onConfirm()" class="text link">Забыли пароль?</p>
-    </form>
-  <app-email-modal *ngIf="isOpen"></app-email-modal>
+  <form *ngIf="!isAuth" class="form-authorization">
+    <input class="input-text" type="email" placeholder="E-mail">
+    <div>
+      <input class="input-text" [type]="isShowPassword ? 'text':'password'" placeholder="пароль">
+      <svg (click)="toggleShowPassword()" *ngIf="isShowPassword" class="show reg">
+        <use xlink:href="./assets/icons/icons-interface.svg#show-password-active"></use>
+      </svg>
+      <svg (click)="toggleShowPassword()" *ngIf="!isShowPassword" class="show">
+        <use xlink:href="./assets/icons/icons-interface.svg#show-password-no-active"></use>
+      </svg>
+    </div>
+    <button (click)="signIn()" class="button">
+      <svg>
+        <use xlink:href="./assets/icons/icons-interface.svg#sign_up"></use>
+      </svg>
+    </button>
+    <p class="text">если у вас нет акаунта, то можно
+      <span class="link" (click)="toggleForm()">зарегистрироваться</span></p>
+    <p (click)="onConfirm()" class="text link">Забыли пароль?</p>
+  </form>
 </div>

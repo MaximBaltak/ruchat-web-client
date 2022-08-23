@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {Store} from "@ngrx/store";
+import {AppState} from "../../store";
+import {openConfirmModalAction} from "../../store/actions/modals.actions";
 
 @Component({
   selector: 'app-auth',
@@ -7,14 +10,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  isOpen: boolean = false
   isAuth: boolean = false
-
-  constructor(private activeRoute: Router) {
-
-  }
+  isShowPassword:boolean = false
+  constructor(private activeRoute: Router,private store$: Store<AppState>) {}
 
   ngOnInit(): void {
+  }
+  public toggleShowPassword() :void {
+    this.isShowPassword = ! this.isShowPassword
   }
 
   public signIn(): void {
@@ -26,6 +29,7 @@ export class AuthComponent implements OnInit {
   }
 
   public onConfirm(): void {
+    this.store$.dispatch(openConfirmModalAction())
   }
 
   public toggleForm() {

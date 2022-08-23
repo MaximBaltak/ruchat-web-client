@@ -4,7 +4,7 @@
       <app-avatar [type]="'big'"></app-avatar>
     </div>
     <p>Максим7393 <span>администратор</span></p>
-    <svg>
+    <svg (click)="openSettingsModal()">
       <use xlink:href="./assets/icons/icons-interface.svg#settings"></use>
     </svg>
   </div>
@@ -15,7 +15,7 @@
       </div>
       <div class="flex-mobile">
         <p>Максим7393</p>
-        <svg>
+        <svg (click)="openSettingsModal()">
           <use xlink:href="./assets/icons/icons-interface.svg#settings"></use>
         </svg>
       </div>
@@ -53,4 +53,3 @@
     </div>
   </div>
 </ng-template>
-<app-settings-modal *ngIf="isOpenSettingsModal"></app-settings-modal>

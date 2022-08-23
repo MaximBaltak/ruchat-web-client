@@ -12,6 +12,7 @@ import {ControlUsersComponent} from "./pages/admin/components/control-users/cont
 import {ControlNewsComponent} from "./pages/admin/components/control-news/control-news.component";
 import {ProfileComponent} from "./pages/settings/components/profile/profile.component";
 import {BackgroundChangeComponent} from "./pages/settings/components/background-change/background-change.component";
+import {Modals} from "./guards/modals.guard";
 
 const childrenAdminRoutes: Routes = [
   {path: 'users', component: ControlUsersComponent},
@@ -27,7 +28,7 @@ const routes: Routes = [
   {path: 'user/:id', component: ChatComponent},
   {path: 'news', component: NewsComponent},
   {path: 'admin', component: AdminComponent, children: childrenAdminRoutes},
-  {path: 'settings', component: SettingsComponent, children: childrenSettingsRoutes},
+  {path: 'settings', component: SettingsComponent, children: childrenSettingsRoutes,canActivate:[Modals]},
   {path: 'confirm', component: ConfirmComponent},
   {path: '**', component: NotFoundComponent},
 ];
