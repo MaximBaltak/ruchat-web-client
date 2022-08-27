@@ -1,0 +1,68 @@
+<form [formGroup]="registrationForm" *ngIf="typeForm === 'registration'|| typeForm === 'profile'" class="form-authorization">
+  <input (change)="changeFile($event)" formControlName="file" class="input-file-none" accept="image/png,image/jpg" id="input-file" type="file">
+  <label class="input-file-label" for="input-file">
+    <svg *ngIf="!registrationForm.controls['file'].value">
+      <use xlink:href="./assets/icons/icons-interface.svg#add_image"></use>
+    </svg>
+    <img *ngIf="registrationForm.controls['file'].value" [src]="currentAvatar" alt="avatar">
+  </label>
+  <input formControlName="userName"
+         [ngClass]="{'error':registrationForm.controls['userName'].invalid}"
+         class="input-text"
+         type="text"
+         placeholder="имя пользователя">
+
+  <input [ngClass]="{'error':registrationForm.controls['email'].invalid}" formControlName="email" class="input-text"
+         type="email" placeholder="E-mail">
+  <div class="flex-password">
+    <input [ngClass]="{'error':registrationForm.controls['password'].invalid}" formControlName="password"
+           class="input-text"
+           [type]="isShowPassword? 'text':'password'" placeholder="пароль">
+    <svg (click)="toggleShowPassword()" *ngIf="isShowPassword" class="show">
+      <use xlink:href="./assets/icons/icons-interface.svg#show-password-active"></use>
+    </svg>
+    <svg (click)="toggleShowPassword()" *ngIf="!isShowPassword" class="show">
+      <use xlink:href="./assets/icons/icons-interface.svg#show-password-no-active"></use>
+    </svg>
+  </div>
+  <p class="errors-text" *ngIf="registrationForm.controls['file'].errors">Поле обязательное</p>
+  <p class="errors-text" *ngIf="registrationForm.controls['userName'].errors">Имя пользователя не должно содержать цифр</p>
+  <p class="errors-text" *ngIf="registrationForm.controls['email'].errors">Должен быть корректный Email</p>
+  <p class="errors-text" *ngIf="registrationForm.controls['password'].errors">Пароль должен иметь минимум 8 символов и иметь латинские буквы, и цифры.</p>
+  <button  *ngIf="typeForm === 'registration'" [disabled]="registrationForm.invalid" (click)="signUp()"
+          class="button">
+    <svg>
+      <use xlink:href="./assets/icons/icons-interface.svg#sign_up"></use>
+    </svg>
+  </button>
+  <p *ngIf="typeForm === 'registration'" class="text">если есть акаунт,то можно <span class="link" (click)="toggleForm('auth')">войти</span></p>
+  <button *ngIf="typeForm === 'profile'" [disabled]="registrationForm.invalid" class="save">изменить</button>
+  <button *ngIf="typeForm === 'profile'" (click)="back()" class="save back">назад</button>
+</form>
+<form [formGroup]="authForm" *ngIf="typeForm === 'auth'" class="form-authorization">
+  <input [ngClass]="{'error':authForm.controls['email'].invalid}"
+         formControlName="email" class="input-text"
+         type="email" placeholder="E-mail">
+  <div>
+    <input [ngClass]="{'error':authForm.controls['password'].invalid}"
+           formControlName="password" class="input-text"
+           [type]="isShowPassword ? 'text':'password'"
+           placeholder="пароль">
+    <svg (click)="toggleShowPassword()" *ngIf="isShowPassword" class="show reg">
+      <use xlink:href="./assets/icons/icons-interface.svg#show-password-active"></use>
+    </svg>
+    <svg (click)="toggleShowPassword()" *ngIf="!isShowPassword" class="show">
+      <use xlink:href="./assets/icons/icons-interface.svg#show-password-no-active"></use>
+    </svg>
+  </div>
+  <p class="errors-text" *ngIf="authForm.controls['email'].errors">Должен быть корректный Email</p>
+  <p class="errors-text" *ngIf="authForm.controls['password'].errors">Пароль должен иметь минимум 8 символов и иметь латинские буквы, и цифры.</p>
+  <button [disabled]="authForm.invalid" (click)="signIn()" class="button">
+    <svg>
+      <use xlink:href="./assets/icons/icons-interface.svg#sign_up"></use> q
+    </svg>
+  </button>
+  <p class="text">если у вас нет акаунта, то можно
+    <span class="link" (click)="toggleForm('registration')">зарегистрироваться</span></p>
+  <p (click)="onConfirm()" class="text link">Забыли пароль?</p>
+</form>

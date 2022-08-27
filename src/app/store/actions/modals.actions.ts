@@ -2,15 +2,15 @@ import { createAction, props } from '@ngrx/store';
 import {actionTypes} from "./types";
 
 export const openInfoModalAction = createAction(
-  actionTypes.openInfoModal,
+  actionTypes.OPEN_INFO_MODAL,
 );
 export const openConfirmModalAction = createAction(
-  actionTypes.openConfirmModal,
+  actionTypes.OPEN_CONFIRM_MODAL,
 );
 export const openSettingsModalAction = createAction(
-  actionTypes.openSettingsModal,
+  actionTypes.OPEN_SETTINGS_MODAL,
 );
 export const closeModalsAction = createAction(
-  actionTypes.closeModals,
+  actionTypes.CLOSE_MODALS,
 );
 

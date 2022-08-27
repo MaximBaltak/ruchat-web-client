@@ -1,29 +1,4 @@
-@import "./../../app.component";
-
-.container {
-  height: 100%;
-  width: 1000px;
-  margin: 0 auto 0;
-  @include tablet-medium() {
-    width: 600px;
-  }
-  @include tablet-small() {
-    width: 100%;
-  }
-
-}
-
-.logo {
-  width: 299px;
-  height: 57px;
-  display: block;
-  margin: 69px auto 0;
-  @include phone-medium() {
-    width: 200px;
-    height: 40px;
-  }
-}
-
+@import "../../pages/auth/auth.component";
 .form-authorization {
   width: 230px;
   margin: 140px auto 0;
@@ -36,6 +11,7 @@
   }
 
   .input-file-label {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +46,8 @@
       border-radius: 100%;
     }
   }
-
+.flex-password{
+  position: relative;
   .input-text {
     width: 90%;
     height: 23px;
@@ -93,40 +70,35 @@
     &::placeholder {
       color: $placeholder;
     }
+    .show {
+      z-index: 1000;
+      position: absolute;
+      transform: translate(188px, -34px);
+      width: 83px;
+      height: 83px
+      }
+      use{
+        cursor: pointer;
+      }
+    .reg {
+      top: 394px;
+      @include phone-medium() {
+        top: 345px;
+      }
+    }
 
   }
+}
+
   .error{
     border-color: $color-red;
   }
   .success{
     border-color: $color-green;
-}
-
-  .show {
-    z-index: 1000;
-    position: absolute;
-    transform: translate(188px, -34px);
-    width: 83px;
-    height: 83px;
-    @include phone-medium() {
-      transform: none;
-      left: 75%;
-      top: 539px;
-      width: 69px;
-      height: 71px;
-    }
-    use{
-      cursor: pointer;
-    }
   }
 
-  .reg {
-    top: 394px;
-    @include phone-medium() {
-      top: 345px;
-    }
 
-  }
+
 
   .button {
     width: 90%;
@@ -141,6 +113,9 @@
     &:hover{
       transform: translateX(10px);
     };
+  }
+  .disabled{
+    opacity: 0.5;
   }
 
   .text {
@@ -159,4 +134,17 @@
     cursor: pointer;
     color: $color-blue;
   }
+}
+.save{
+  cursor: pointer;
+  margin: 33px auto 0;
+  width: 150px;
+  height: 19px;
+  font-weight: 600;
+  font-size: 18px;
+  color: $color-green;
+}
+.back{
+  cursor: pointer;
+  color: $color-red;
 }

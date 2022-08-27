@@ -5,26 +5,5 @@
     </div>
     <p>Максим7393 <span>администратор</span></p>
   </div>
-  <form class="form-authorization">
-    <input class="input-file-none" id="input-file" type="file">
-    <label class="input-file-label" for="input-file">
-      <svg>
-        <use xlink:href="./assets/icons/icons-interface.svg#add_image"></use>
-      </svg>
-      <!--          <img src="./assets/image/avatar.jpg" alt="avatar">-->
-    </label>
-    <input class="input-text" type="text" placeholder="имя пользователя">
-    <input class="input-text" type="email" placeholder="E-mail">
-    <div>
-      <input class="input-text" [type]="isShowPassword ? 'text':'password'" placeholder="пароль">
-      <svg *ngIf="isShowPassword" (click)="toggleShowPassword()" class="show">
-        <use xlink:href="./assets/icons/icons-interface.svg#show-password-active"></use>
-      </svg>
-            <svg *ngIf="!isShowPassword" (click)="toggleShowPassword()" class="show">
-              <use xlink:href="./assets/icons/icons-interface.svg#show-password-no-active"></use>
-            </svg>
-    </div>
-    <button class="save">изменить</button>
-    <button (click)="back()" class="save back">назад</button>
-  </form>
+  <app-form [typeForm]="type$ | async"></app-form>
 </div>

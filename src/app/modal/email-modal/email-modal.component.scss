@@ -59,7 +59,11 @@
         line-height: 19px;
         color: $color-green;
       }
+      .error{
+        border-color: $color-red;
+      }
 
     }
   }
 }
+

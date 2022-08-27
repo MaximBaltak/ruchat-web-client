@@ -4,6 +4,8 @@ import {Observable} from 'rxjs';
 import {AppState} from "../store";
 import {Store} from "@ngrx/store";
 import {closeModalsAction} from "../store/actions/modals.actions";
+import {toggleTypeFormAction} from "../store/actions/users.actions";
+import {typeForm} from "../components/form/types";
 
 @Injectable({
   providedIn: 'root'

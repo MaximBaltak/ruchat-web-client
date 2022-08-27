@@ -37,6 +37,8 @@ import {EffectsModule} from "@ngrx/effects";
 import {ModalComponent} from './modal/modal.component';
 import {ModalsGuard} from "./guards/modals.guard";
 import {ChatService} from "./services/chat.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -69,9 +71,12 @@ import {ChatService} from "./services/chat.service";
     NotFoundComponent,
     ButtonsControlComponent,
     ModalComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(),

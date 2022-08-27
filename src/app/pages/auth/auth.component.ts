@@ -2,7 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 import {AppState} from "../../store";
-import {openConfirmModalAction} from "../../store/actions/modals.actions";
+import {typeForm} from "../../components/form/types";
+import {typeFormSelector} from "../../store/selectors/users.selectors";
+import {Observable} from "rxjs";
+import {toggleTypeFormAction} from "../../store/actions/users.actions";
+
 
 @Component({
   selector: 'app-auth',
@@ -10,29 +14,14 @@ import {openConfirmModalAction} from "../../store/actions/modals.actions";
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  isAuth: boolean = false
-  isShowPassword:boolean = false
-  constructor(private activeRoute: Router,private store$: Store<AppState>) {}
+  type$:Observable<typeForm>
+
+  constructor(private store$: Store<AppState>) {
+    this.type$ = this.store$.select(typeFormSelector)
+  }
 
   ngOnInit(): void {
-  }
-  public toggleShowPassword() :void {
-    this.isShowPassword = ! this.isShowPassword
+    this.store$.dispatch(toggleTypeFormAction({typeForm:typeForm.AUTHORIZATION}))
   }
 
-  public signIn(): void {
-    this.activeRoute.navigate(['user', 1])
-  }
-
-  public signUp(): void {
-    this.activeRoute.navigate(['user', 1])
-  }
-
-  public onConfirm(): void {
-    this.store$.dispatch(openConfirmModalAction())
-  }
-
-  public toggleForm() {
-    this.isAuth = !this.isAuth
-  }
 }
