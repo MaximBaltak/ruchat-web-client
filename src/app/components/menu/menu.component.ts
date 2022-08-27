@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AppState} from "../../store";
 import {Store} from "@ngrx/store";
 import {Observable} from "rxjs";
@@ -15,6 +15,7 @@ import {
 })
 export class MenuComponent {
   @Input() type: string = 'menu'
+  @Output() openChatEmitter: EventEmitter<void> = new EventEmitter<void>()
   isDekstop$: Observable<boolean>
   constructor(private store$: Store<AppState>) {
     this.isDekstop$ = this.store$.select(isDekstopSelector)
@@ -24,5 +25,8 @@ export class MenuComponent {
   }
   public closeSettingsModal (): void{
     this.store$.dispatch(closeModalsAction())
+  }
+  public openChat(): void{
+    this.openChatEmitter.emit()
   }
 }

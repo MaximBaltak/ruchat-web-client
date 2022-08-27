@@ -7,11 +7,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
+    isShowPassword: boolean = true
   constructor(private activeRoute: Router) { }
 
   ngOnInit(): void {
   }
+  public toggleShowPassword(): void{
+   this.isShowPassword = !this.isShowPassword
+}
   public back() :void{
     this.activeRoute.navigate(['user',1])
   }

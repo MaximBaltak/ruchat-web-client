@@ -11,8 +11,16 @@ import {isDekstopSelector} from "../../store/selectors/adaptive.selectors";
 })
 export class ChatComponent {
     isDekstop$:Observable<boolean>
+    isChat:boolean
   constructor(private store$: Store<AppState>) {
       this.isDekstop$ = store$.select(isDekstopSelector)
+      this.isChat = false
+  }
+  public openChat() :void{
+      this.isChat = true
+  }
+  public closeChat(): void{
+      this.isChat = false
   }
 
 

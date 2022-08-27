@@ -21,7 +21,7 @@ export const adaptiveReducer = createReducer(
     return {
       ...state,
       isDekstop : width > 1024,
-      isTablet: width > 480,
+      isTablet: width < 1024,
       isMobile: width < 600
     }
   })

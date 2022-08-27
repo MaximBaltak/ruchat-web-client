@@ -1,5 +1,5 @@
 <div class="header">
-  <svg *ngIf="isMobile$| async">
+  <svg (click)="closeChat()" *ngIf="isTablet$| async">
     <use xlink:href="./assets/icons/icons-interface.svg#back"></use>
   </svg>
   <img src="./assets/image/logo.png" alt="RuChat" title="RuChat">

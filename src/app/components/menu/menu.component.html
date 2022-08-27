@@ -33,14 +33,7 @@
     <li class="active"><p>все пользователи</p></li>
   </ul>
   <ul class="users">
-    <app-user></app-user>
-    <app-user></app-user>
-    <app-user></app-user>
-    <app-user></app-user>
-    <app-user></app-user>
-    <app-user></app-user>
-    <app-user></app-user>
-    <app-user></app-user>
+    <app-user (openChatEmitter)="openChat()"></app-user>
   </ul>
 </div>
 <ng-template #about>

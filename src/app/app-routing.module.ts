@@ -12,25 +12,64 @@ import {ControlUsersComponent} from "./pages/admin/components/control-users/cont
 import {ControlNewsComponent} from "./pages/admin/components/control-news/control-news.component";
 import {ProfileComponent} from "./pages/settings/components/profile/profile.component";
 import {BackgroundChangeComponent} from "./pages/settings/components/background-change/background-change.component";
-import {Modals} from "./guards/modals.guard";
+import {ModalsGuard} from "./guards/modals.guard";
 
 const childrenAdminRoutes: Routes = [
-  {path: 'users', component: ControlUsersComponent},
-  {path: 'content', component: ControlContentComponent},
-  {path: 'news', component: ControlNewsComponent},
+  {
+    path: 'users',
+    component: ControlUsersComponent
+  },
+  {
+    path: 'content',
+    component: ControlContentComponent
+  },
+  {
+    path: 'news',
+    component: ControlNewsComponent
+  },
 ]
 const childrenSettingsRoutes: Routes = [
-  {path: 'profile', component: ProfileComponent},
-  {path: 'background', component: BackgroundChangeComponent},
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'background',
+    component: BackgroundChangeComponent
+  },
 ]
 const routes: Routes = [
-  {path: '', component: AuthComponent},
-  {path: 'user/:id', component: ChatComponent},
-  {path: 'news', component: NewsComponent},
-  {path: 'admin', component: AdminComponent, children: childrenAdminRoutes},
-  {path: 'settings', component: SettingsComponent, children: childrenSettingsRoutes,canActivate:[Modals]},
-  {path: 'confirm', component: ConfirmComponent},
-  {path: '**', component: NotFoundComponent},
+  {
+    path: '',
+    component: AuthComponent
+  },
+  {
+    path: 'user/:id',
+    component: ChatComponent
+  },
+  {
+    path: 'news',
+    component: NewsComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: childrenAdminRoutes
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+    children: childrenSettingsRoutes,
+    canActivate: [ModalsGuard]
+  },
+  {
+    path: 'confirm',
+    component: ConfirmComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
 ];
 
 @NgModule({

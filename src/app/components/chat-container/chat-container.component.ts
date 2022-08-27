@@ -1,8 +1,10 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Observable} from "rxjs";
 import {Store} from "@ngrx/store";
 import {AppState} from "../../store";
-import {isMobileSelector} from "../../store/selectors/adaptive.selectors";
+import {isMobileSelector, isTabletSelector} from "../../store/selectors/adaptive.selectors";
+import {IBackgroundChat} from "../../services/types";
+import {ChatService} from "../../services/chat.service";
 
 @Component({
   selector: 'app-chat-container',
@@ -10,10 +12,17 @@ import {isMobileSelector} from "../../store/selectors/adaptive.selectors";
   styleUrls: ['./chat-container.component.scss']
 })
 export class ChatContainerComponent{
-    isMobile$:Observable<boolean>
+    isTablet$:Observable<boolean>
+    @Output() closeChatEmitter: EventEmitter<void>= new EventEmitter<void>()
     @Input() type:string = 'menu'
-  constructor(private store$: Store<AppState>) {
-      this.isMobile$ = store$.select(isMobileSelector)
+    backgroundChat: IBackgroundChat
+  constructor(private store$: Store<AppState>,private chatService:ChatService) {
+      this.isTablet$ = store$.select(isTabletSelector)
+      this.backgroundChat = chatService.getBackgrounds().find( background => background.active) ||
+        chatService.getBackgrounds()[0]
+  }
+  public closeChat() : void{
+      this.closeChatEmitter.emit()
   }
 
 

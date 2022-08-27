@@ -1,8 +1,12 @@
 <div *ngIf="isDekstop$|async" class="grid">
   <div class="menu"><app-menu [type]="'menu'"></app-menu></div>
-  <div class="chat"><app-chat-container [type]="'menu'"></app-chat-container></div>
+  <div class="chat">
+    <app-chat-container [type]="'menu'"></app-chat-container>
+  </div>
 </div>
 <div *ngIf="!(isDekstop$|async)" class="grid">
-  <div class="menu"><app-menu></app-menu></div>
-<!--  <div class="chat"><app-chat-container [type]="'menu'"></app-chat-container></div>-->
+  <div *ngIf="!isChat" class="menu"><app-menu (openChatEmitter)="openChat()"></app-menu></div>
+  <div *ngIf="isChat" class="chat">
+    <app-chat-container (closeChatEmitter)="closeChat()" [type]="'menu'"></app-chat-container>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="chat-container" *ngIf="type === 'menu';else news ">
-  <app-header *ngIf="isMobile$|async" ></app-header>
+  <app-header (closeChatEmitter)="closeChat()" *ngIf="isTablet$|async" ></app-header>
   <ul class="messages">
     <app-message [isCome]="true"></app-message>
     <app-message [isCome]="false"></app-message>
@@ -19,8 +19,9 @@
         <use xlink:href="./assets/icons/icons-interface.svg#message"></use>
       </svg>
     </div>
-      <app-header *ngIf="!(isMobile$|async)"></app-header>
+      <app-header *ngIf="!(isTablet$|async)"></app-header>
   </div>
+  <img class="background-chat" [src]="backgroundChat.path" alt="background-chat">
 </div>
 <ng-template #news>
   <div class="chat-container">
@@ -28,5 +29,6 @@
       <app-message-admin></app-message-admin>
       <app-message-admin></app-message-admin>
     </ul>
+    <img class="background-chat" [src]="backgroundChat.path" alt="background-chat">
   </div>
 </ng-template>

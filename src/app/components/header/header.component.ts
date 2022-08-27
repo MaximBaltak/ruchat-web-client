@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Observable} from "rxjs";
 import {AppState} from "../../store";
 import {Store} from "@ngrx/store";
-import {isMobileSelector} from "../../store/selectors/adaptive.selectors";
+import {isMobileSelector, isTabletSelector} from "../../store/selectors/adaptive.selectors";
 
 @Component({
   selector: 'app-header',
@@ -10,9 +10,13 @@ import {isMobileSelector} from "../../store/selectors/adaptive.selectors";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent{
-  isMobile$: Observable<boolean>
+  isTablet$: Observable<boolean>
+  @Output() closeChatEmitter: EventEmitter<void> = new EventEmitter<void>()
   constructor(private store$: Store<AppState>) {
-    this.isMobile$ = this.store$.select(isMobileSelector)
+    this.isTablet$ = this.store$.select(isTabletSelector)
+  }
+  public closeChat () :void{
+    this.closeChatEmitter.emit()
   }
 
 }
